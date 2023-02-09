@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_authentication">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_authentication"
+    app:startDestination="@id/authFragment">
 
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.techholding.android.examples.ui.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_firebaseAuthFragment"
+            app:destination="@id/firebaseAuthFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firebaseAuthFragment"
+        android:name="com.techholding.android.examples.ui.firebase.FirebaseAuthFragment"
+        android:label="fragment_firebase_auth"
+        tools:layout="@layout/fragment_firebase_auth" >
+        <action
+            android:id="@+id/action_firebaseAuthFragment_to_firebaseEmailAuthFragment"
+            app:destination="@id/firebaseEmailAuthFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firebaseEmailAuthFragment"
+        android:name="com.techholding.android.examples.ui.firebase.email.EmailFragment"
+        android:label="fragment_firebase_email_auth"
+        tools:layout="@layout/fragment_email_auth" />
+
+    <fragment
+        android:id="@+id/firebasePhoneAuthFragment"
+        android:name="com.techholding.android.examples.FirebasePhoneAuthFragment"
+        android:label="fragment_firebase_phone_auth"
+        tools:layout="@layout/fragment_phone_auth" />
 </navigation>

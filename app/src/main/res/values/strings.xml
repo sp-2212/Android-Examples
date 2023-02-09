@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Android Examples</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aws_authentication">AWS Authentication</string>
+    <string name="firebase_authentication">Firebase Authentication</string>
+    <string name="email_authentication">Email Authentication</string>
+    <string name="phone_authentication">Phone Authentication</string>
 </resources>
