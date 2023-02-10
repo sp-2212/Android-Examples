@@ -22,12 +22,19 @@ class AuthFragment : Fragment() {
 
         _binding = FragmentAuthBinding.inflate(inflater, container, false)
 
-        binding.awsAuthentication.isEnabled = false
+        initAWSButton()
+        initFirebaseButton()
 
+        return binding.root
+    }
+
+    private fun initFirebaseButton() {
         binding.firebaseAuthentication.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_authFragment_to_firebaseAuthFragment)
         }
+    }
 
-        return binding.root
+    private fun initAWSButton() {
+        binding.awsAuthentication.isEnabled = false
     }
 }
