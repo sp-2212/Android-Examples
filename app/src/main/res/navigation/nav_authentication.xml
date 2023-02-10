@@ -21,22 +21,22 @@
         android:label="fragment_firebase_auth"
         tools:layout="@layout/fragment_firebase_auth" >
         <action
-            android:id="@+id/action_firebaseAuthFragment_to_firebaseEmailAuthFragment"
-            app:destination="@id/firebaseEmailAuthFragment" />
+            android:id="@+id/action_firebaseAuthFragment_to_EmailFragment"
+            app:destination="@id/EmailFragment" />
         <action
-            android:id="@+id/action_firebaseAuthFragment_to_firebasePhoneAuthFragment"
-            app:destination="@id/firebasePhoneAuthFragment" />
+            android:id="@+id/action_firebaseAuthFragment_to_PhoneFragment"
+            app:destination="@id/PhoneFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/firebaseEmailAuthFragment"
+        android:id="@+id/EmailFragment"
         android:name="com.techholding.android.examples.ui.firebase.email.EmailFragment"
-        android:label="fragment_firebase_email_auth"
+        android:label="fragment_email_auth"
         tools:layout="@layout/fragment_email_auth" />
 
     <fragment
-        android:id="@+id/firebasePhoneAuthFragment"
-        android:name="com.techholding.android.examples.FirebasePhoneAuthFragment"
-        android:label="fragment_firebase_phone_auth"
+        android:id="@+id/PhoneFragment"
+        android:name="com.techholding.android.examples.ui.firebase.phone.PhoneFragment"
+        android:label="fragment_phone_auth"
         tools:layout="@layout/fragment_phone_auth" />
 </navigation>
