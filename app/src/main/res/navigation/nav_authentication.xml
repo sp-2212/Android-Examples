@@ -9,7 +9,7 @@
         android:id="@+id/authFragment"
         android:name="com.techholding.android.examples.ui.AuthFragment"
         android:label="fragment_auth"
-        tools:layout="@layout/fragment_auth" >
+        tools:layout="@layout/fragment_auth">
         <action
             android:id="@+id/action_authFragment_to_firebaseAuthFragment"
             app:destination="@id/firebaseAuthFragment" />
@@ -19,24 +19,33 @@
         android:id="@+id/firebaseAuthFragment"
         android:name="com.techholding.android.examples.ui.firebase.FirebaseAuthFragment"
         android:label="fragment_firebase_auth"
-        tools:layout="@layout/fragment_firebase_auth" >
+        tools:layout="@layout/fragment_firebase_auth">
         <action
-            android:id="@+id/action_firebaseAuthFragment_to_EmailFragment"
-            app:destination="@id/EmailFragment" />
+            android:id="@+id/action_firebaseAuthFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
         <action
-            android:id="@+id/action_firebaseAuthFragment_to_PhoneFragment"
-            app:destination="@id/PhoneFragment" />
+            android:id="@+id/action_firebaseAuthFragment_to_phoneFragment"
+            app:destination="@id/phoneFragment" />
+        <action
+            android:id="@+id/action_firebaseAuthFragment_to_googleFragment"
+            app:destination="@id/googleFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/EmailFragment"
+        android:id="@+id/emailFragment"
         android:name="com.techholding.android.examples.ui.firebase.email.EmailFragment"
         android:label="fragment_email_auth"
         tools:layout="@layout/fragment_email_auth" />
 
     <fragment
-        android:id="@+id/PhoneFragment"
+        android:id="@+id/phoneFragment"
         android:name="com.techholding.android.examples.ui.firebase.phone.PhoneFragment"
         android:label="fragment_phone_auth"
         tools:layout="@layout/fragment_phone_auth" />
+
+    <fragment
+        android:id="@+id/googleFragment"
+        android:name="com.techholding.android.examples.ui.firebase.google.GoogleFragment"
+        android:label="fragment_google_auth"
+        tools:layout="@layout/fragment_google_auth" />
 </navigation>

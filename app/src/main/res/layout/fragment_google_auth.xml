@@ -5,35 +5,24 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/email_authentication"
+        android:id="@+id/sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/email_authentication"
+        android:layout_marginTop="10dp"
+        android:text="@string/sign_in"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/phone_authentication"
+        android:id="@+id/sign_out"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:text="@string/phone_authentication"
-        app:layout_constraintTop_toBottomOf="@+id/email_authentication"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/google_authentication"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/google_authentication"
-        app:layout_constraintTop_toBottomOf="@+id/phone_authentication"
+        android:text="@string/sign_out"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
