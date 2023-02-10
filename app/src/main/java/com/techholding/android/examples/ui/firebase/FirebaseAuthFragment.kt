@@ -20,14 +20,28 @@ class FirebaseAuthFragment : Fragment() {
 
         _binding = FragmentFirebaseAuthBinding.inflate(inflater, container, false)
 
-        binding.emailAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_EmailFragment)
-        }
-
-        binding.phoneAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_PhoneFragment)
-        }
+        initEmailButton()
+        initPhoneButton()
+        initGoogleButton()
 
         return binding.root
+    }
+
+    private fun initEmailButton() {
+        binding.emailAuthentication.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_emailFragment)
+        }
+    }
+
+    private fun initPhoneButton() {
+        binding.phoneAuthentication.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_phoneFragment)
+        }
+    }
+
+    private fun initGoogleButton() {
+        binding.googleAuthentication.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_googleFragment)
+        }
     }
 }
