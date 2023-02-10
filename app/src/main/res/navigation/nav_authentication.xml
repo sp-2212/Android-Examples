@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_firebaseAuthFragment_to_firebaseEmailAuthFragment"
             app:destination="@id/firebaseEmailAuthFragment" />
+        <action
+            android:id="@+id/action_firebaseAuthFragment_to_firebasePhoneAuthFragment"
+            app:destination="@id/firebasePhoneAuthFragment" />
     </fragment>
 
     <fragment
