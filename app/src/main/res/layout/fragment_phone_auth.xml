@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <!-- TODO: Update blank fragment layout -->
-
+    android:layout_height="match_parent">
 
     <EditText
         android:hint="@string/phone_number"
         android:id="@+id/phoneLogin"
         android:inputType="phone"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/verificationCode"
@@ -31,9 +27,7 @@
         android:hint="@string/verification_code"
         app:layout_constraintTop_toBottomOf="@+id/phoneLogin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/verficationBtn"
@@ -47,6 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
         />
+
     <Button
         android:id="@+id/resendCode"
         android:layout_width="match_parent"
