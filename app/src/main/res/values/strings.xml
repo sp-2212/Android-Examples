@@ -17,4 +17,5 @@
     <string name="resend_code">Resend Code</string>
     <string name="sign_out">Sign Out</string>
     <string name="google_authentication">Google Authentication</string>
+    <string name="phone_number">Phone number</string>
 </resources>

@@ -21,11 +21,11 @@ class FirebaseAuthFragment : Fragment() {
         _binding = FragmentFirebaseAuthBinding.inflate(inflater, container, false)
 
         binding.emailAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_EmailFragment)
+            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_emailFragment)
         }
 
         binding.phoneAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_PhoneFragment)
+            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_phoneFragment)
         }
 
         return binding.root

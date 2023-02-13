@@ -9,8 +9,9 @@
 
 
     <EditText
-        android:hint="@string/enter_your_phone_number"
+        android:hint="@string/phone_number"
         android:id="@+id/phoneLogin"
+        android:inputType="phone"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
 
     <EditText
         android:id="@+id/verificationCode"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -34,7 +36,7 @@
         />
 
     <Button
-        android:id="@+id/verficatiobBtn"
+        android:id="@+id/verficationBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -46,29 +48,30 @@
         tools:ignore="MissingConstraints"
         />
     <Button
-        android:id="@+id/phoneButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:text="@string/verify_phone_number"
-        app:layout_constraintTop_toBottomOf="@+id/verficatiobBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        />
-    <Button
         android:id="@+id/resendCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="20dp"
         android:text="@string/resend_code"
-        app:layout_constraintTop_toBottomOf="@id/phoneButton"
+        app:layout_constraintTop_toBottomOf="@id/verficationBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
         />
+    <Button
+        android:id="@+id/phoneButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/verify_phone_number"
+        app:layout_constraintTop_toBottomOf="@+id/resendCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        />
+
     <Button
         android:id="@+id/phn_sign_out"
         android:layout_width="match_parent"
@@ -76,7 +79,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="20dp"
         android:text="@string/sign_out"
-        app:layout_constraintTop_toBottomOf="@id/resendCode"
+        app:layout_constraintTop_toBottomOf="@id/phoneButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints"
