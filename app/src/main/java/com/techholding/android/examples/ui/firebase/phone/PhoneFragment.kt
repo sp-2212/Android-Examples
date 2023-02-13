@@ -146,6 +146,7 @@ class PhoneFragment : Fragment() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
+                    binding.phoneLogin.text.clear()
                     binding.verificationCode.text.clear()
                     Toast.makeText(requireContext(),"Successfully Logged In",Toast.LENGTH_LONG).show()
 
