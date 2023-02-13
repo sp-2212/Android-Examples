@@ -142,7 +142,6 @@ class PhoneFragment : Fragment() {
             }
         }
     }
-
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
