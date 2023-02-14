@@ -27,9 +27,51 @@ class FirebaseAuthFragment : Fragment() {
         }
 
         binding.phoneAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_phoneFragment)
+            view?.findNavController()?.navigate(
+                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
+            )
+        }
+
+        binding.googleAuthentication.setOnClickListener {
+            view?.findNavController()?.navigate(
+                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
+            )
         }
 
         return binding.root
     }
+
+//    private fun emailButton(){
+//        view?.findNavController()?.navigate(
+//            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToEmailFragment()
+//        )
+//    }
+//
+//    private fun phoneButton(){
+//        view?.findNavController()?.navigate(
+//            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
+//        )
+//    }
+//
+//    private fun googleButton(){
+//        view?.findNavController()?.navigate(
+//            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
+//        )
+//    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        binding.emailAuthentication.setOnClickListener {
+//            emailButton()
+//        }
+//        binding.phoneAuthentication.setOnClickListener {
+//            phoneButton()
+//        }
+//        binding.googleAuthentication.setOnClickListener {
+//            googleButton()
+//        }
+//
+//    }
+
+
 }

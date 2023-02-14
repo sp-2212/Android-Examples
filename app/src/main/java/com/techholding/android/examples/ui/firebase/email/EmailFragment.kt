@@ -24,7 +24,7 @@ class EmailFragment : Fragment() {
     private lateinit var email: String
     private lateinit var password: String
     private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val firebaseUser: FirebaseUser? = firebaseAuth.currentUser
+    private var firebaseUser: FirebaseUser? = firebaseAuth.currentUser
 //    private val currUser: FirebaseUser = FirebaseAuth.getInstance().currentUser
        // ...
     override fun onCreateView(
@@ -71,11 +71,13 @@ class EmailFragment : Fragment() {
                         .addOnCompleteListener(requireActivity()) { task ->
                             if (task.isSuccessful) {
                                 Toast.makeText(requireContext(), "Please check your email and verify that", Toast.LENGTH_LONG).show()
+                                firebaseUser = auth.currentUser
                                 sendEmailVerification()
 
 
 
                             } else {
+                                task.exception?.printStackTrace()
                                 Toast.makeText(
                                     requireContext(),
                                     "Failed to Sign up",
@@ -138,7 +140,7 @@ class EmailFragment : Fragment() {
     }
 
     private fun sendEmailVerification() {
-
+        Log.d("jinil","firebaseUser: $firebaseUser")
         firebaseUser?.let {
             it.sendEmailVerification().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -148,6 +150,9 @@ class EmailFragment : Fragment() {
                     binding.passwordText.text.clear()
 
 
+                }
+                else{
+                    task.exception?.printStackTrace()
                 }
             }
         }

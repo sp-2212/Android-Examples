@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "124279195095-hj0740t5gnbtiqijvhj08ncpcaof922p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techholding.android.examples",
+            "certificate_hash": "d8fc2c23969614b4777070e9299ad8203b751977"
+          }
+        },
+        {
           "client_id": "124279195095-io6848thmi2m80d3leb7q9epoiku2ggk.apps.googleusercontent.com",
           "client_type": 3
         }
