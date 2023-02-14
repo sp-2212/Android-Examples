@@ -11,18 +11,10 @@ import com.techholding.android.examples.utils.UserDetail
 class GoogleViewModel : ViewModel() {
 
     val REQ_CODE: Int = 123
-    lateinit var mGoogleSignInClient: GoogleSignInClient
-    lateinit var firebaseAuth: FirebaseAuth
     var authState =  MutableLiveData<Boolean>()
 
     init {
         authState.value = checkUser()
-    }
-    //sign-out
-    fun signOutGoogle()
-    {
-        Firebase.auth.signOut()
-        authState.value = false
     }
 
     private fun checkUser(): Boolean

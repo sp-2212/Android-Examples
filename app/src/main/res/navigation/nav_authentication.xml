@@ -29,6 +29,12 @@
         <action
             android:id="@+id/action_firebaseAuthFragment_to_googleFragment"
             app:destination="@id/googleFragment" />
+        <action
+            android:id="@+id/action_firebaseAuthFragment_to_preBuiltFragment"
+            app:destination="@id/preBuiltFragment" />
+        <action
+            android:id="@+id/action_firebaseAuthFragment_to_facebookFragment"
+            app:destination="@id/facebookFragment" />
     </fragment>
 
     <fragment
@@ -48,4 +54,16 @@
         android:name="com.techholding.android.examples.ui.firebase.google.GoogleFragment"
         android:label="fragment_google_auth"
         tools:layout="@layout/fragment_google_auth" />
+
+    <fragment
+        android:id="@+id/preBuiltFragment"
+        android:name="com.techholding.android.examples.ui.firebase.prebuiltui.PreBuiltFragment"
+        android:label="fragment_pre_built_auth"
+        tools:layout="@layout/fragment_pre_built_auth" />
+
+    <fragment
+        android:id="@+id/facebookFragment"
+        android:name="com.techholding.android.examples.ui.firebase.facebook.FacebookFragment"
+        android:label="fragment_facebook_auth"
+        tools:layout="@layout/fragment_facebook_auth" />
 </navigation>
