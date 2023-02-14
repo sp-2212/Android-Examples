@@ -67,33 +67,29 @@ class PhoneFragment : Fragment() {
         }
     }
 
-//    private fun Check(number:String){
-//        var isValid=true
-//        if(number.isNotEmpty()){
-//            if (number.length==10){
-//
-//            }
-//        }
-//    }
+    private fun checkPhone(number:String) : Boolean{
+        if((number.isNotEmpty())&&(number.length==10)){
+            return true
+        }
+        return false
+    }
 
     private fun initSignin(){
         binding.verficationBtn.setOnClickListener {
             number = binding.phoneLogin.text.trim().toString()
-            if(number.isNotEmpty()){
-                if(number.length==10){
+
+            if(checkPhone(number))
+            {
                     number="+91$number"
 
                     sendVerification(number)
                     verifyOtp()
-                }
-                else{
-                    Toast.makeText(requireContext(),"Please enter valid number",Toast.LENGTH_LONG).show()
-                }
             }
             else{
-                Toast.makeText(requireContext(),"Please enter a number",Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(),"Please enter a number in proper format.",Toast.LENGTH_LONG).show()
             }
         }
+
         binding.resendCode.setOnClickListener {
             number = binding.phoneLogin.text.trim().toString()
             number="+91$number"

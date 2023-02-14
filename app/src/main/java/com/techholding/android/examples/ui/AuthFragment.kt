@@ -29,7 +29,8 @@ class AuthFragment : Fragment() {
 
     private fun initListeners() {
         binding.firebaseAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_authFragment_to_firebaseAuthFragment)
+            val action = AuthFragmentDirections.actionAuthFragmentToFirebaseAuthFragment()
+            view?.findNavController()?.navigate(action)
         }
 
         binding.awsAuthentication.isEnabled = false

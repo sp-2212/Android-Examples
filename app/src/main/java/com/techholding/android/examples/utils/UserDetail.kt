@@ -6,7 +6,7 @@ import com.google.firebase.ktx.Firebase
 
 object UserDetail {
     var currentUser = Firebase.auth.currentUser
-    var authState =  MutableLiveData<Boolean>(checkUser())
+    var authState =  MutableLiveData(checkUser())
 
     private fun checkUser(): Boolean
     {
