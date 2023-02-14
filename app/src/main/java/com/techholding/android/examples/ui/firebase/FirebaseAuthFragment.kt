@@ -20,58 +20,58 @@ class FirebaseAuthFragment : Fragment() {
 
         _binding = FragmentFirebaseAuthBinding.inflate(inflater, container, false)
 
-        binding.emailAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(
-                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToEmailFragment()
-            )
-        }
-
-        binding.phoneAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(
-                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
-            )
-        }
-
-        binding.googleAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(
-                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
-            )
-        }
+//        binding.emailAuthentication.setOnClickListener {
+//            view?.findNavController()?.navigate(
+//                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToEmailFragment()
+//            )
+//        }
+//
+//        binding.phoneAuthentication.setOnClickListener {
+//            view?.findNavController()?.navigate(
+//                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
+//            )
+//        }
+//
+//        binding.googleAuthentication.setOnClickListener {
+//            view?.findNavController()?.navigate(
+//                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
+//            )
+//        }
 
         return binding.root
     }
 
-//    private fun emailButton(){
-//        view?.findNavController()?.navigate(
-//            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToEmailFragment()
-//        )
-//    }
-//
-//    private fun phoneButton(){
-//        view?.findNavController()?.navigate(
-//            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
-//        )
-//    }
-//
-//    private fun googleButton(){
-//        view?.findNavController()?.navigate(
-//            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
-//        )
-//    }
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        binding.emailAuthentication.setOnClickListener {
-//            emailButton()
-//        }
-//        binding.phoneAuthentication.setOnClickListener {
-//            phoneButton()
-//        }
-//        binding.googleAuthentication.setOnClickListener {
-//            googleButton()
-//        }
-//
-//    }
+    private fun emailButton(){
+        view?.findNavController()?.navigate(
+            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToEmailFragment()
+        )
+    }
+
+    private fun phoneButton(){
+        view?.findNavController()?.navigate(
+            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
+        )
+    }
+
+    private fun googleButton(){
+        view?.findNavController()?.navigate(
+            FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
+        )
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.emailAuthentication.setOnClickListener {
+            emailButton()
+        }
+        binding.phoneAuthentication.setOnClickListener {
+            phoneButton()
+        }
+        binding.googleAuthentication.setOnClickListener {
+            googleButton()
+        }
+
+    }
 
 
 }

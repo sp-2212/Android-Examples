@@ -27,15 +27,15 @@ class AuthFragment : Fragment() {
 
         _binding = FragmentAuthBinding.inflate(inflater, container, false)
 
-        binding.firebaseAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_authFragment_to_firebaseAuthFragment)
-        }
+//        binding.firebaseAuthentication.setOnClickListener {
+//            view?.findNavController()?.navigate(R.id.action_authFragment_to_firebaseAuthFragment)
+//        }
 
         binding.awsAuthentication.isEnabled = false
 
-        binding.firebaseAuthentication.setOnClickListener {
-            initListeners()
-        }
+//        binding.firebaseAuthentication.setOnClickListener {
+//            initListeners()
+//        }
 
         return binding.root
     }
@@ -48,11 +48,11 @@ class AuthFragment : Fragment() {
 
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        binding.firebaseAuthentication.setOnClickListener {
-//            initListeners()
-//        }
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.firebaseAuthentication.setOnClickListener {
+            initListeners()
+        }
+    }
 
 }
