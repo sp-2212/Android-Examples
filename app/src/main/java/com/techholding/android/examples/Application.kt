@@ -10,6 +10,6 @@ class Application : android.app.Application(){
 
         FacebookSdk.sdkInitialize(applicationContext)
         FirebaseApp.initializeApp(applicationContext)
-        AppEventsLogger.activateApp(this);
+        AppEventsLogger.activateApp(this)
     }
 }

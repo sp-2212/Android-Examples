@@ -25,8 +25,7 @@ class EmailFragment : Fragment() {
     private lateinit var password: String
     private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val firebaseUser: FirebaseUser? = firebaseAuth.currentUser
-//    private val currUser: FirebaseUser = FirebaseAuth.getInstance().currentUser
-       // ...
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
