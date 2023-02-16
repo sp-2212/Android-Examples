@@ -8,11 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.facebook.*
-import com.facebook.appevents.AppEventsLogger
-import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.techholding.android.examples.databinding.FragmentFacebookAuthBinding
-import com.techholding.android.examples.databinding.FragmentPreBuiltAuthBinding
+import com.techholding.android.examples.utils.FireBaseAuthManager
 
 class FacebookFragment : Fragment() {
 
@@ -26,31 +24,28 @@ class FacebookFragment : Fragment() {
     ): View {
         _binding = FragmentFacebookAuthBinding.inflate(inflater, container, false)
 
-        binding.loginButton.setOnClickListener {
-            binding.loginButton.setReadPermissions(listOf("email"))
-            callbackManager = CallbackManager.Factory.create()
+        binding.loginButton.setReadPermissions(listOf("email"))
+        callbackManager = CallbackManager.Factory.create()
 
-            binding.loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-                override fun onCancel() {
-                    Toast.makeText(context, "Sign-in Cancelled",Toast.LENGTH_SHORT).show()
-                }
+        binding.loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+            override fun onCancel() {
+                Toast.makeText(context, "Sign-in Cancelled",Toast.LENGTH_SHORT).show()
+            }
 
-                override fun onError(error: FacebookException) {
-                    Toast.makeText(context, "Sign-in Unsuccessful",Toast.LENGTH_SHORT).show()
-                }
+            override fun onError(error: FacebookException) {
+                Toast.makeText(context, "Sign-in Unsuccessful",Toast.LENGTH_SHORT).show()
+            }
 
-                override fun onSuccess(result: LoginResult) {
-                    Toast.makeText(context, "Sign-in Successful",Toast.LENGTH_SHORT).show()
-                }
+            override fun onSuccess(result: LoginResult) {
+                Toast.makeText(context, "Sign-in Successful",Toast.LENGTH_SHORT).show()
+                FireBaseAuthManager.authState.value = true
+            }
+        })
 
-            })
-        }
-
-        val accessToken = AccessToken.getCurrentAccessToken()
-        accessToken!=null && !accessToken.isExpired
         return binding.root
     }
 
+    @Deprecated("Deprecated")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)

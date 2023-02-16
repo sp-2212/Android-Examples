@@ -8,8 +8,8 @@ class Application : android.app.Application(){
     override fun onCreate() {
         super.onCreate()
 
+        FirebaseApp.initializeApp(this)
         FacebookSdk.sdkInitialize(applicationContext)
-        FirebaseApp.initializeApp(applicationContext)
         AppEventsLogger.activateApp(this)
     }
 }

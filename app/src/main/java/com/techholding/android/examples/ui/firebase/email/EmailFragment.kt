@@ -49,8 +49,6 @@ class EmailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
-
-
     }
 
     private fun check(email:String, password: String): Boolean {
@@ -60,8 +58,6 @@ class EmailFragment : Fragment() {
     }
 
     private fun signUpActivity(){
-
-
                 email = binding.emailText.text.trim().toString()
                 password = binding.passwordText.text.trim().toString()
 

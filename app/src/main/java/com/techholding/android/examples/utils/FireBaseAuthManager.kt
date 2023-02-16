@@ -1,12 +1,17 @@
 package com.techholding.android.examples.utils
 
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-object UserDetail {
+object FireBaseAuthManager {
     var currentUser = Firebase.auth.currentUser
     var authState =  MutableLiveData(checkUser())
+
+    init {
+
+    }
 
     private fun checkUser(): Boolean
     {

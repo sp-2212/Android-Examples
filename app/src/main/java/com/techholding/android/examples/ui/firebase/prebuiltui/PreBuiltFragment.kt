@@ -1,7 +1,6 @@
 package com.techholding.android.examples.ui.firebase.prebuiltui
 
 import android.app.Activity.RESULT_OK
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,7 +13,7 @@ import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.techholding.android.examples.R
 import com.techholding.android.examples.databinding.FragmentPreBuiltAuthBinding
-import com.techholding.android.examples.utils.UserDetail
+import com.techholding.android.examples.utils.FireBaseAuthManager
 
 class PreBuiltFragment : Fragment() {
 
@@ -42,8 +41,8 @@ class PreBuiltFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        UserDetail.authState.observe(viewLifecycleOwner, Observer {
-            when(UserDetail.authState.value)
+        FireBaseAuthManager.authState.observe(viewLifecycleOwner, Observer {
+            when(FireBaseAuthManager.authState.value)
             {
                 true -> {
                     binding.signIn.isEnabled=false
@@ -76,16 +75,16 @@ class PreBuiltFragment : Fragment() {
 
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
         if (result.resultCode == RESULT_OK) {
-            UserDetail.authState.value = true
+            FireBaseAuthManager.authState.value = true
         } else {
-            UserDetail.authState.value = false
+            FireBaseAuthManager.authState.value = false
             Toast.makeText(context, "Sign-In Failed", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun initSignOutButton() {
         binding.signOut.setOnClickListener {
-            UserDetail.signOut()
+            FireBaseAuthManager.signOut()
             Toast.makeText(context, "Sign-out Successful", Toast.LENGTH_SHORT).show()
         }
     }
