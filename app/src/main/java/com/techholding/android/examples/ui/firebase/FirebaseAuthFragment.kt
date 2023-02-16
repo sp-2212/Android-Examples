@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.techholding.android.examples.R
 import com.techholding.android.examples.databinding.FragmentFirebaseAuthBinding
 
@@ -27,28 +28,28 @@ class FirebaseAuthFragment : Fragment() {
 
     private fun initListeners() {
         binding.emailAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(
+            findNavController().navigate(
                 FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToEmailFragment()
             )
         }
 
         binding.phoneAuthentication.setOnClickListener {
 
-            view?.findNavController()?.navigate(
+            findNavController().navigate(
                 FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
             )
         }
 
         binding.googleAuthentication.setOnClickListener {
 
-            view?.findNavController()?.navigate(
+            findNavController().navigate(
                 FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
             )
         }
 
         binding.facebookAuthentication.setOnClickListener {
 
-            view?.findNavController()?.navigate(
+            findNavController().navigate(
                 R.id.action_firebaseAuthFragment_to_facebookFragment
             )
         }
@@ -56,7 +57,7 @@ class FirebaseAuthFragment : Fragment() {
 
         binding.prebuiltAuthentication.setOnClickListener {
 
-            view?.findNavController()?.navigate(
+            findNavController().navigate(
                 R.id.action_firebaseAuthFragment_to_preBuiltFragment
             )
         }

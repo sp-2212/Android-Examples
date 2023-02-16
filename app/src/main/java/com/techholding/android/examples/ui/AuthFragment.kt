@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.techholding.android.examples.databinding.FragmentAuthBinding
 
 class AuthFragment : Fragment() {
@@ -29,7 +31,7 @@ class AuthFragment : Fragment() {
     private fun initListeners() {
         binding.firebaseAuthentication.setOnClickListener {
             val action = AuthFragmentDirections.actionAuthFragmentToFirebaseAuthFragment()
-            view?.findNavController()?.navigate(action)
+            findNavController()?.navigate(action)
         }
 
         binding.awsAuthentication.isEnabled = false
