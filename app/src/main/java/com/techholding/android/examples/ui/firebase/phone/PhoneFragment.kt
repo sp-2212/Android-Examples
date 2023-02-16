@@ -53,7 +53,7 @@ class PhoneFragment : Fragment() {
                 Log.d("Jinil" , "onVerificationCompleted Success")
             }
             override fun onVerificationFailed(e: FirebaseException) {
-
+                e.printStackTrace()
             }
             override fun onCodeSent(
                 verificationId: String,
@@ -107,6 +107,7 @@ class PhoneFragment : Fragment() {
             .setCallbacks(callbacks)          // OnVerificationStateChangedCallbacks
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
+        Toast.makeText(requireContext(),"Verification sent",Toast.LENGTH_LONG).show()
         Log.d("jinil" , "Verification sent")
     }
 
@@ -147,7 +148,7 @@ class PhoneFragment : Fragment() {
                     Toast.makeText(requireContext(),"Successfully Logged In",Toast.LENGTH_LONG).show()
 
                 } else {
-
+                    task.exception?.printStackTrace()
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         binding.verificationCode.text.clear()
                         Toast.makeText(requireContext(),"Invalid OTP", Toast.LENGTH_LONG).show()
@@ -166,5 +167,9 @@ class PhoneFragment : Fragment() {
             binding.verificationCode.text.clear()
         }
 
+    }
+
+    companion object {
+//        private const val TAG = "P"
     }
 }
