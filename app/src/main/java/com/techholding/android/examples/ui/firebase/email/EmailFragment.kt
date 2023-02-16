@@ -31,11 +31,7 @@ class EmailFragment : Fragment() {
 
         _binding = FragmentEmailAuthBinding.inflate(inflater, container, false)
 
-        signUpActivity()
-
-        signInActivity()
-
-        signOutActivity()
+        initListeners()
 
         return binding.root
     }
@@ -153,6 +149,19 @@ class EmailFragment : Fragment() {
             Toast.makeText(requireContext(), "Successfully signed-out!", Toast.LENGTH_LONG).show()
             binding.emailText.text.clear()
             binding.passwordText.text.clear()
+        }
+    }
+
+    private fun initListeners(){
+
+        binding.signUp.setOnClickListener {
+            signUpActivity()
+        }
+        binding.signIn.setOnClickListener {
+            signInActivity()
+        }
+        binding.signOut.setOnClickListener {
+            signOutActivity()
         }
     }
 
