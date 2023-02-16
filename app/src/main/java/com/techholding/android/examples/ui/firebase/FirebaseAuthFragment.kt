@@ -33,19 +33,32 @@ class FirebaseAuthFragment : Fragment() {
         }
 
         binding.phoneAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_phoneFragment)
+
+            view?.findNavController()?.navigate(
+                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToPhoneFragment()
+            )
         }
 
         binding.googleAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_googleFragment)
+
+            view?.findNavController()?.navigate(
+                FirebaseAuthFragmentDirections.actionFirebaseAuthFragmentToGoogleFragment()
+            )
         }
 
         binding.facebookAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_facebookFragment)
+
+            view?.findNavController()?.navigate(
+                R.id.action_firebaseAuthFragment_to_facebookFragment
+            )
         }
 
+
         binding.prebuiltAuthentication.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_firebaseAuthFragment_to_preBuiltFragment)
+
+            view?.findNavController()?.navigate(
+                R.id.action_firebaseAuthFragment_to_preBuiltFragment
+            )
         }
     }
 }

@@ -34,6 +34,7 @@ class PhoneFragment : Fragment() {
         _binding = FragmentPhoneAuthBinding.inflate(inflater,container,false)
 
         initSignin()
+
         initSignout()
 
         return binding.root
@@ -44,12 +45,10 @@ class PhoneFragment : Fragment() {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
         FirebaseApp.initializeApp(requireContext())
-//        val credential = PhoneAuthProvider.getCredential(verificationId!!, code)
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
-            // This method is called when the verification is completed
+
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-//                signInWithPhoneAuthCredential(credential)
                 Log.d("Jinil" , "onVerificationCompleted Success")
             }
             override fun onVerificationFailed(e: FirebaseException) {
@@ -81,7 +80,6 @@ class PhoneFragment : Fragment() {
             if(checkPhone(number))
             {
                     number="+91$number"
-
                     sendVerification(number)
                     verifyOtp()
             }
@@ -120,24 +118,24 @@ class PhoneFragment : Fragment() {
             .setCallbacks(callbacks)          // OnVerificationStateChangedCallbacks
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
-        Log.d("jinil" ,number.toString())
+        Log.d("jinil" , number)
 
     }
 
     private fun verifyOtp(){
 
-        binding.phoneButton.setOnClickListener {
+    binding.phoneButton.setOnClickListener {
 
-            otp = binding.verificationCode.text.trim().toString()
+        otp = binding.verificationCode.text.trim().toString()
 
-            if (otp.isNotEmpty()) {
-                val credential: PhoneAuthCredential =
-                    PhoneAuthProvider.getCredential(storedVerificationId, otp)
-                signInWithPhoneAuthCredential(credential)
-            } else {
-                Toast.makeText(requireContext(), "Enter OTP", Toast.LENGTH_LONG).show()
-            }
+        if (otp.isNotEmpty()) {
+            val credential: PhoneAuthCredential =
+                PhoneAuthProvider.getCredential(storedVerificationId, otp)
+            signInWithPhoneAuthCredential(credential)
+        } else {
+            Toast.makeText(requireContext(), "Enter OTP", Toast.LENGTH_LONG).show()
         }
+    }
     }
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential)
@@ -169,7 +167,4 @@ class PhoneFragment : Fragment() {
 
     }
 
-    companion object {
-//        private const val TAG = "P"
-    }
 }

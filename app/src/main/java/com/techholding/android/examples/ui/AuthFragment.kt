@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import com.techholding.android.examples.R
 import com.techholding.android.examples.databinding.FragmentAuthBinding
 
 class AuthFragment : Fragment() {
