@@ -1,6 +1,7 @@
 package com.techholding.android.examples.ui.firebase.prebuiltui
 
 import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +25,7 @@ class PreBuiltFragment : Fragment() {
     ) { res ->
         this.onSignInResult(res)
     }
+    private lateinit var signInIntent : Intent
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +34,37 @@ class PreBuiltFragment : Fragment() {
 
         _binding = FragmentPreBuiltAuthBinding.inflate(inflater, container, false)
 
-        initSignInButton()
-        initSignOutButton()
+        initSignInIntent()
+        initListeners()
 
         return binding.root
+    }
+
+    private fun initSignInIntent() {
+        val providers = arrayListOf(
+            AuthUI.IdpConfig.EmailBuilder().build(),
+            AuthUI.IdpConfig.PhoneBuilder().build(),
+            AuthUI.IdpConfig.GoogleBuilder().build(),
+            AuthUI.IdpConfig.FacebookBuilder().build())
+
+        signInIntent = AuthUI.getInstance()
+            .createSignInIntentBuilder()
+            .setAvailableProviders(providers)
+            .setLogo(R.drawable.ic_launcher_foreground)
+            .build()
+    }
+
+
+    private fun initListeners() {
+        binding.signIn.setOnClickListener {
+            signInLauncher.launch(signInIntent)
+        }
+
+        binding.signOut.setOnClickListener {
+            FireBaseAuthManager.signOut()
+            Toast.makeText(context, "Sign-out Successful", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,23 +85,6 @@ class PreBuiltFragment : Fragment() {
         })
     }
 
-    private fun initSignInButton() {
-        binding.signIn.setOnClickListener {
-            val providers = arrayListOf(
-                AuthUI.IdpConfig.EmailBuilder().build(),
-                AuthUI.IdpConfig.PhoneBuilder().build(),
-                AuthUI.IdpConfig.GoogleBuilder().build(),
-                AuthUI.IdpConfig.FacebookBuilder().build())
-
-            val signInIntent = AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .setLogo(R.drawable.ic_launcher_foreground)
-                .build()
-            signInLauncher.launch(signInIntent)
-        }
-    }
-
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
         if (result.resultCode == RESULT_OK) {
             FireBaseAuthManager.authState.value = true
@@ -82,10 +94,4 @@ class PreBuiltFragment : Fragment() {
         }
     }
 
-    private fun initSignOutButton() {
-        binding.signOut.setOnClickListener {
-            FireBaseAuthManager.signOut()
-            Toast.makeText(context, "Sign-out Successful", Toast.LENGTH_SHORT).show()
-        }
-    }
 }

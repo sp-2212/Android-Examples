@@ -39,8 +39,7 @@
         app:layout_constraintTop_toBottomOf="@id/verificationCode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/resendCode"
@@ -52,8 +51,8 @@
         app:layout_constraintTop_toBottomOf="@id/verficationBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/phoneButton"
         android:layout_width="match_parent"
@@ -64,8 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/resendCode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/phn_sign_out"
@@ -77,6 +75,6 @@
         app:layout_constraintTop_toBottomOf="@id/phoneButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

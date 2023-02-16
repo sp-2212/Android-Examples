@@ -19,7 +19,7 @@
     <string name="facebook_authentication">Facebook Authentication</string>
     <string name="firebase_pre_built_ui">Firebase Pre-Built UI</string>
     <string name="facebook_application_id">1249214355803244</string>
-    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="fb_login_protocol_scheme">fb1249214355803244</string>
     <string name="facebook_client_token">56789</string>
     <string name="phone_number">Phone Number</string>
 </resources>

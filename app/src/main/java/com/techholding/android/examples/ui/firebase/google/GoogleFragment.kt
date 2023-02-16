@@ -2,6 +2,7 @@ package com.techholding.android.examples.ui.firebase.google
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -100,6 +101,8 @@ class GoogleFragment : Fragment() {
                     }
                     catch(e: ApiException) {
                         Toast.makeText(context, "Sign-in Cancelled", Toast.LENGTH_SHORT).show()
+                        e.printStackTrace()
+                        Log.e("GoogleFragment","ApiException: $e")
                     }
             }
         }
